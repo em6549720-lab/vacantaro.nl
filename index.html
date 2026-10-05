@@ -2,51 +2,495 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VacantaRO.NL – Vacanțe pentru românii din Olanda</title>
-<meta name="description" content="Vacanțe și hoteluri pentru românii din Olanda.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VacantaRO.NL — Vacanțe din Amsterdam</title>
+<meta name="description" content="Zboruri și hoteluri pentru românii din Olanda.">
+
 <style>
+:root{
+--navy:#092445;
+--blue:#0798f7;
+--cyan:#21c9f3;
+--yellow:#ffd43b;
+--cream:#f4fbff;
+--text:#092445;
+--muted:#64748b;
+--white:#fff;
+--shadow:0 14px 35px rgba(5,30,65,.14)
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f8fc;color:#122746}
+
+html{scroll-behavior:smooth}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(180deg,#eaf8ff,#fff 45%,#eef8fc);
+color:var(--text);
+line-height:1.45
+}
+
 a{text-decoration:none;color:inherit}
-header{background:#071b35;color:#fff;padding:18px 22px}
-nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:28px;font-weight:900}.logo span{color:#25c5ff}
-.navlinks{display:flex;gap:25px;font-weight:bold}
-.hero{min-height:540px;color:white;background:linear-gradient(90deg,rgba(3,24,50,.85),rgba(3,24,50,.15)),url("https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=2000&q=90") center/cover}
-.hero-inner{max-width:1150px;margin:auto;padding:90px 22px}
-.badge{display:inline-block;background:#25c5ff;color:#071b35;padding:10px 16px;border-radius:30px;font-weight:bold;margin-bottom:20px}
-h1{font-size:clamp(42px,7vw,68px);max-width:700px;line-height:1.02}
-.hero p{font-size:20px;max-width:600px;margin-top:20px;line-height:1.5}
-.hero-btn{display:inline-block;background:#0878f9;padding:15px 25px;border-radius:30px;margin-top:25px;font-weight:bold}
-.wrap{max-width:1150px;margin:auto;padding:55px 22px}
-.eyebrow{color:#0878f9;font-weight:900;text-transform:uppercase;margin-bottom:8px}
-.title{font-size:38px;margin-bottom:8px}
-.sub{color:#687386;font-size:18px;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px #10274618}
-.photo{height:230px;background:center/cover;position:relative}
-.tag{position:absolute;right:15px;top:15px;background:#ef4050;color:#fff;padding:10px 15px;border-radius:25px;font-weight:bold}
-.body{padding:22px}
-.body h2{font-size:27px;margin-bottom:14px}
-.stars{color:#f5b51b;font-size:20px;margin-bottom:20px}
-.stars span{color:#687386;font-size:16px}
-.info{display:flex;justify-content:space-between;color:#687386;margin-bottom:18px}
-.price{color:#d52f3d;font-weight:bold;font-size:20px;margin-bottom:18px}
-.btn{display:block;background:#ffd42e;color:#111;text-align:center;padding:17px;border-radius:14px;font-size:20px;font-weight:900}
-.dest{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.dest a{background:#fff;padding:22px;border-radius:16px;font-size:20px;font-weight:bold;box-shadow:0 5px 18px #10274612}
-.cta{background:#071b35;color:#fff;text-align:center;padding:45px 20px;border-radius:22px}
-.cta h2{font-size:36px;margin-bottom:12px}
-.cta p{color:#d8e0ea;margin-bottom:22px}
-.cta a{display:inline-block;background:#ffd42e;color:#111;padding:15px 25px;border-radius:30px;font-weight:bold}
-footer{background:#071b35;color:#fff;text-align:center;padding:30px}
-@media(max-width:800px){
-.navlinks{display:none}
-.grid,.dest{grid-template-columns:1fr}
-.hero-inner{padding:70px 22px 100px}
-.photo{height:250px}
-.title{font-size:32px}
+
+header{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(7,29,57,.96);
+color:#fff;
+box-shadow:0 5px 22px rgba(0,0,0,.12)
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+min-height:72px;
+padding:12px 20px;
+display:flex;
+align-items:center;
+gap:24px
+}
+
+.logo{
+font-size:29px;
+font-weight:900;
+white-space:nowrap
+}
+
+.logo span{color:var(--cyan)}
+
+.navlinks{
+margin-left:auto;
+display:flex;
+gap:22px;
+font-weight:800
+}
+
+.navlinks a:hover{color:var(--yellow)}
+
+.navbtn{
+background:var(--yellow);
+color:#111;
+padding:12px 18px;
+border-radius:25px;
+font-weight:900;
+white-space:nowrap
+}
+
+/* HERO */
+.hero{
+min-height:690px;
+color:#fff;
+background-image:
+linear-gradient(90deg,rgba(2,18,40,.72),rgba(2,18,40,.15)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center
+}
+
+.hero-inner{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:95px 22px 110px
+}
+
+.pill{
+display:inline-block;
+background:var(--cyan);
+color:#06203b;
+border-radius:30px;
+padding:9px 17px;
+font-weight:900;
+margin-bottom:18px
+}
+
+.hero h1{
+font-size:clamp(48px,7vw,84px);
+line-height:.98;
+max-width:850px;
+margin-bottom:20px
+}
+
+.hero p{
+font-size:22px;
+max-width:650px;
+margin-bottom:28px
+}
+
+.actions{
+display:flex;
+gap:14px;
+flex-wrap:wrap
+}
+
+.primary,.secondary{
+padding:16px 24px;
+border-radius:15px;
+font-weight:900;
+font-size:17px
+}
+
+.primary{
+background:var(--yellow);
+color:#111
+}
+
+.secondary{
+background:#fff;
+color:var(--navy)
+}
+
+/* GENERAL */
+.wrap{
+max-width:1200px;
+margin:auto;
+padding:60px 20px
+}
+
+.eyebrow{
+text-transform:uppercase;
+color:var(--blue);
+font-weight:900;
+letter-spacing:1.4px;
+font-size:13px
+}
+
+.title{
+font-size:clamp(32px,4vw,46px);
+line-height:1.05;
+margin:7px 0
+}
+
+.sub{
+color:var(--muted);
+font-size:18px;
+margin-bottom:28px
+}
+
+/* FLIGHTS */
+.flight-box{
+margin-top:-65px;
+position:relative;
+z-index:4;
+background:#fff;
+border-radius:28px;
+padding:26px;
+box-shadow:var(--shadow)
+}
+
+.flight-head{
+display:flex;
+justify-content:space-between;
+gap:15px;
+align-items:center;
+margin-bottom:20px
+}
+
+.flight-head h2{
+font-size:30px
+}
+
+.routes{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
+}
+
+.route{
+min-height:155px;
+display:flex;
+align-items:flex-end;
+position:relative;
+overflow:hidden;
+border-radius:20px;
+padding:0;
+color:#fff;
+font-weight:900;
+box-shadow:0 8px 22px rgba(5,30,65,.12);
+background-size:cover;
+background-position:center;
+border:0;
+transition:.2s
+}
+
+.route:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(transparent 35%,rgba(2,18,40,.78))
+}
+
+.route span{
+position:relative;
+z-index:2;
+padding:18px;
+width:100%;
+font-size:17px
+}
+
+.route:hover{
+transform:translateY(-3px);
+box-shadow:var(--shadow)
+}
+
+/* HOTEL CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px
+}
+
+.card{
+background:#fff;
+border-radius:25px;
+overflow:hidden;
+box-shadow:var(--shadow);
+border:1px solid #e6eef4
+}
+
+.photo{
+height:235px;
+background-size:cover;
+background-position:center;
+position:relative
+}
+
+.photo:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(transparent 42%,rgba(2,20,45,.55))
+}
+
+.tag{
+position:absolute;
+z-index:2;
+top:15px;
+left:15px;
+background:var(--yellow);
+color:#111;
+border-radius:22px;
+padding:8px 12px;
+font-size:12px;
+font-weight:900
+}
+
+.body{
+padding:19px
+}
+
+.body h3{
+font-size:25px;
+margin-bottom:6px
+}
+
+.meta{
+color:var(--muted);
+margin-bottom:17px
+}
+
+.btn{
+display:block;
+text-align:center;
+background:var(--blue);
+color:#fff;
+padding:14px;
+border-radius:13px;
+font-weight:900
+}
+
+.btn:hover{background:#0578c5}
+
+/* DESTINATIONS */
+.dest{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:12px
+}
+
+.dest a{
+background:#fff;
+border-radius:17px;
+padding:16px;
+font-weight:900;
+box-shadow:0 8px 22px rgba(5,30,65,.08)
+}
+
+/* PANELS */
+.dual{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px
+}
+
+.panel{
+border-radius:27px;
+padding:30px;
+background:linear-gradient(135deg,#08264c,#078fdd);
+color:#fff;
+box-shadow:var(--shadow)
+}
+
+.panel.light{
+background:#fff;
+color:var(--navy)
+}
+
+.panel h2{
+font-size:29px;
+margin-bottom:8px
+}
+
+.panel p{
+margin-bottom:18px;
+color:#dcefff
+}
+
+.panel.light p{
+color:var(--muted)
+}
+
+.list{
+display:grid;
+gap:10px
+}
+
+.list a{
+background:rgba(255,255,255,.12);
+padding:13px;
+border-radius:12px;
+font-weight:800
+}
+
+.panel.light .list a{
+background:#f0f8fd
+}
+
+/* CTA */
+.cta{
+background:linear-gradient(110deg,#062249,#00a5e8);
+color:#fff;
+border-radius:28px;
+padding:55px 25px;
+text-align:center;
+box-shadow:var(--shadow)
+}
+
+.cta h2{
+font-size:38px;
+margin-bottom:9px
+}
+
+.cta p{
+margin-bottom:22px;
+color:#e6f7ff
+}
+
+footer{
+background:#04172f;
+color:#c9d8e8;
+text-align:center;
+padding:38px 20px;
+font-size:13px
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+.navlinks{
+display:none
+}
+
+.routes{
+grid-template-columns:1fr 1fr
+}
+
+.grid{
+grid-template-columns:1fr 1fr
+}
+
+.dest{
+grid-template-columns:repeat(3,1fr)
+}
+
+.hero{
+min-height:630px
+}
+
+.hero-inner{
+padding:75px 20px 90px
+}
+
+}
+
+/* TELEFON */
+@media(max-width:600px){
+
+.nav{
+min-height:64px;
+padding:10px 14px
+}
+
+.logo{
+font-size:23px
+}
+
+.navbtn{
+padding:10px 13px;
+font-size:14px
+}
+
+.hero{
+min-height:610px;
+background-position:center
+}
+
+.hero h1{
+font-size:48px
+}
+
+.hero p{
+font-size:18px
+}
+
+.routes,.grid{
+grid-template-columns:1fr
+}
+
+.dest{
+grid-template-columns:1fr 1fr
+}
+
+.flight-box{
+margin:0 10px;
+padding:18px;
+border-radius:22px
+}
+
+.flight-head{
+display:block
+}
+
+.flight-head h2{
+font-size:25px;
+margin-bottom:5px
+}
+
+.wrap{
+padding:48px 16px
+}
+
+.photo{
+height:215px
+}
+
+.cta h2{
+font-size:30px
+}
+
 }
 </style>
 </head>
@@ -54,118 +498,672 @@ footer{background:#071b35;color:#fff;text-align:center;padding:30px}
 <body>
 
 <header>
-<nav>
-<div class="logo">VacantaRO<span>.NL</span></div>
-<div class="navlinks">
-<a href="#oferte">Oferte</a>
-<a href="#destinatii">Destinații</a>
-<a href="#noi">Despre noi</a>
-</div>
+<div class="nav">
+
+<a class="logo" href="#">
+VacantaRO<span>.NL</span>
+</a>
+
+<nav class="navlinks">
+<a href="#zboruri">✈️ Zboruri</a>
+<a href="#hoteluri">🏨 Hoteluri</a>
+<a href="#destinatii">🌴 Destinații</a>
+<a href="#oferte">🔥 Oferte</a>
 </nav>
+
+<a class="navbtn" href="#zboruri">
+Caută vacanță
+</a>
+
+</div>
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
+
 <div class="hero-inner">
-<div class="badge">🇷🇴 Pentru românii din Olanda 🇳🇱</div>
-<h1>Următoarea ta vacanță începe aici.</h1>
-<p>Descoperă hoteluri și vacanțe frumoase și verifică prețurile și disponibilitatea pe Booking.com.</p>
-<a class="hero-btn" href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank" rel="nofollow sponsored noopener">Vezi ofertele →</a>
+
+<div class="pill">
+🇷🇴 Pentru românii din Olanda 🇳🇱
+</div>
+
+<h1>
+Vacanța ta începe din Amsterdam.
+</h1>
+
+<p>
+Zboruri, hoteluri și escapade în destinații de vis.
+Alege oferta și continuă rezervarea pe Booking.com prin linkurile noastre afiliate.
+</p>
+
+<div class="actions">
+
+<a class="primary" href="#zboruri">
+✈️ Caută zboruri →
+</a>
+
+<a class="secondary" href="#hoteluri">
+🏨 Vezi hoteluri →
+</a>
+
+</div>
+
 </div>
 </section>
 
-<section class="wrap" id="oferte">
-<div class="eyebrow">🔥 Ofertele săptămânii</div>
-<h2 class="title">Cele mai bune prețuri pentru vacanțe de neuitat</h2>
-<p class="sub">Prețurile și disponibilitatea se verifică pe Booking.com.</p>
+<!-- ZBORURI -->
+
+<section class="wrap" id="zboruri">
+
+<div class="flight-box">
+
+<div class="flight-head">
+
+<div>
+<h2>✈️ Zboruri din Amsterdam</h2>
+<span>Linkuri afiliate către rute Booking.com</span>
+</div>
+
+<strong>
+Vezi toate rutele →
+</strong>
+
+</div>
+
+<div class="routes">
+
+<a class="route"
+href="https://www.dpbolvw.net/click-101892598-13397436?sid=amsterdam-antalya&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-tr-antalya.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇹🇷 Amsterdam → Antalya</span>
+
+</a>
+
+<a class="route"
+href="https://www.tkqlhce.com/click-101892598-13397436?sid=Amsterdam-istanbul&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-tr-istanbul.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇹🇷 Amsterdam → Istanbul</span>
+
+</a>
+
+<a class="route"
+href="https://www.tkqlhce.com/click-101892598-13397436?sid=amsterdam-bucuresti&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-ro-bucharest.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇷🇴 Amsterdam → București</span>
+
+</a>
+
+<a class="route"
+href="https://www.kqzyfj.com/click-101892598-13397436?sid=amsterdam-barcelona&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-es-barcelona.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇪🇸 Amsterdam → Barcelona</span>
+
+</a>
+
+<a class="route"
+href="https://www.anrdoezrs.net/click-101892598-13397436?sid=amsterdam-roma&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-it-rome.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇮🇹 Amsterdam → Roma</span>
+
+</a>
+
+<a class="route"
+href="https://www.anrdoezrs.net/click-101892598-13397436?sid=amsterdam-paris&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-fr-paris.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇫🇷 Amsterdam → Paris</span>
+
+</a>
+
+<a class="route"
+href="https://www.tkqlhce.com/click-101892598-13397436?sid=amsterdam-atena&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-gr-athens.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇬🇷 Amsterdam → Atena</span>
+
+</a>
+
+<a class="route"
+href="https://www.dpbolvw.net/click-101892598-13397436?sid=amsterdam-mallorca&url=https%3A%2F%2Fwww.booking.com%2Fflights%2Froute%2Fcity-to-city%2Fnl-amsterdam-to-es-mallorca.html"
+target="_blank"
+rel="nofollow sponsored noopener"
+style="background-image:url('https://images.unsplash.com/photo-1558642084-fd07fae5282e?auto=format&fit=crop&w=900&q=85')">
+
+<span>🇪🇸 Amsterdam → Mallorca</span>
+
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- HOTELURI -->
+
+<section class="wrap" id="hoteluri">
+
+<div class="eyebrow">
+🏨 Hoteluri
+</div>
+
+<h2 class="title">
+Cazări în destinațiile preferate
+</h2>
+
+<p class="sub">
+Alege o destinație și vezi hotelurile disponibile pe Booking.com.
+</p>
 
 <div class="grid">
 
-<div class="card">
-<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1200&q=85')"><div class="tag">OFERTĂ</div></div>
-<div class="body">
-<h2>🇹🇷 Antalya, Turcia</h2>
-<div class="stars">★★★★★ <span>Hoteluri & resorturi</span></div>
-<div class="info"><span>✈️ 7 nopți</span><span>🏨 All Inclusive</span></div>
-<div class="price">Vezi prețul</div>
-<a class="btn" href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank" rel="nofollow sponsored noopener">Vezi oferta →</a>
-</div></div>
+<!-- ANTALYA -->
 
-<div class="card">
-<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85')"><div class="tag">OFERTĂ</div></div>
-<div class="body">
-<h2>🇬🇷 Creta, Grecia</h2>
-<div class="stars">★★★★★ <span>Hoteluri</span></div>
-<div class="info"><span>✈️ 7 nopți</span><span>🏖️ Plajă</span></div>
-<div class="price">Vezi prețul</div>
-<a class="btn" href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank" rel="nofollow sponsored noopener">Vezi oferta →</a>
-</div></div>
+<article class="card">
 
-<div class="card">
-<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=85')"><div class="tag">OFERTĂ</div></div>
-<div class="body">
-<h2>🇪🇸 Barcelona, Spania</h2>
-<div class="stars">★★★★★ <span>Hoteluri</span></div>
-<div class="info"><span>✈️ City break</span><span>☀️ Plajă</span></div>
-<div class="price">Vezi prețul</div>
-<a class="btn" href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank" rel="nofollow sponsored noopener">Vezi oferta →</a>
-</div></div>
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1200&q=85')">
 
-<div class="card">
-<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=85')"><div class="tag">OFERTĂ</div></div>
-<div class="body">
-<h2>🇮🇹 Italia</h2>
-<div class="stars">★★★★★ <span>Hoteluri</span></div>
-<div class="info"><span>✈️ 5–7 nopți</span><span>🍝 Relaxare</span></div>
-<div class="price">Vezi prețul</div>
-<a class="btn" href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank" rel="nofollow sponsored noopener">Vezi oferta →</a>
-</div></div>
+<span class="tag">POPULAR</span>
 
-<div class="card">
-<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85')"><div class="tag">OFERTĂ</div></div>
-<div class="body">
-<h2>🇹🇷 Turcia</h2>
-<div class="stars">★★★★★ <span>Hoteluri & resorturi</span></div>
-<div class="info"><span>✈️ 7 nopți</span><span>🏖️ Mare</span></div>
-<div class="price">Vezi prețul</div>
-<a class="btn" href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank" rel="nofollow sponsored noopener">Vezi oferta →</a>
-</div></div>
+</div>
 
-<div class="card">
-<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85')"><div class="tag">OFERTĂ</div></div>
 <div class="body">
-<h2>🇫🇷 Paris, Franța</h2>
-<div class="stars">★★★★★ <span>City break</span></div>
-<div class="info"><span>✈️ 2–4 nopți</span><span>🗼 Oraș</span></div>
-<div class="price">Vezi prețul</div>
-<a class="btn" href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank" rel="nofollow sponsored noopener">Vezi oferta →</a>
-</div></div>
+
+<h3>🇹🇷 Antalya</h3>
+
+<p class="meta">
+Hoteluri & resorturi • Turcia
+</p>
+
+<a class="btn"
+href="https://www.dpbolvw.net/click-101892598-13397436?sid=hotel-antalya&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Ftr%2Fantalya.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- ISTANBUL -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">CITY BREAK</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇹🇷 Istanbul</h3>
+
+<p class="meta">
+Oraș • Turcia
+</p>
+
+<a class="btn"
+href="https://www.anrdoezrs.net/click-101892598-13397436?sid=hotel-istanbul&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Ftr%2Fistanbul.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- BELEK -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">RESORTURI</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇹🇷 Belek</h3>
+
+<p class="meta">
+Resorturi • Turcia
+</p>
+
+<a class="btn"
+href="https://www.tkqlhce.com/click-101892598-13397436?sid=hotel-belek&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Ftr%2Fbelek.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- SIDE -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">MARE</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇹🇷 Side</h3>
+
+<p class="meta">
+Plajă • Turcia
+</p>
+
+<a class="btn"
+href="https://www.anrdoezrs.net/click-101892598-13397436?sid=hotel-side&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Ftr%2Fside.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- CRETA -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">GRECIA</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇬🇷 Creta</h3>
+
+<p class="meta">
+Insulă • Grecia
+</p>
+
+<a class="btn"
+href="https://www.tkqlhce.com/click-101892598-13397436?sid=hotel-crete&url=https%3A%2F%2Fwww.booking.com%2Fregion%2Fgr%2Fcrete.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- RHODOS -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">GRECIA</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇬🇷 Rhodos</h3>
+
+<p class="meta">
+Insulă • Grecia
+</p>
+
+<a class="btn"
+href="https://www.tkqlhce.com/click-101892598-13397436?sid=hotel-rhodos&url=https%3A%2F%2Fwww.booking.com%2Fregion%2Fgr%2Frhodes.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- BARCELONA -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">SPANIA</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇪🇸 Barcelona</h3>
+
+<p class="meta">
+City break • Spania
+</p>
+
+<a class="btn"
+href="https://www.kqzyfj.com/click-101892598-13397436?sid=hotel-barcelona&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Fes%2Fbarcelona.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- MALLORCA -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1558642084-fd07fae5282e?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">SPANIA</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇪🇸 Mallorca</h3>
+
+<p class="meta">
+Insulă • Spania
+</p>
+
+<a class="btn"
+href="https://www.jdoqocy.com/click-101892598-13397436?sid=hotel-mallorca&url=https%3A%2F%2Fwww.booking.com%2Fregion%2Fes%2Fmallorca.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- ROMA -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">ITALIA</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇮🇹 Roma</h3>
+
+<p class="meta">
+City break • Italia
+</p>
+
+<a class="btn"
+href="https://www.anrdoezrs.net/click-101892598-13397436?sid=hotel-roma&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Fit%2Frome.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- PARIS -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">FRANȚA</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇫🇷 Paris</h3>
+
+<p class="meta">
+City break • Franța
+</p>
+
+<a class="btn"
+href="https://www.anrdoezrs.net/click-101892598-13397436?sid=hotel-paris&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Ffr%2Fparis.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
+
+<!-- OLANDA -->
+
+<article class="card">
+
+<div class="photo"
+style="background-image:url('https://images.unsplash.com/photo-1534351590666-13e3e96b5017?auto=format&fit=crop&w=1200&q=85')">
+
+<span class="tag">🇳🇱 OLANDA</span>
+
+</div>
+
+<div class="body">
+
+<h3>🇳🇱 Hoteluri în Olanda</h3>
+
+<p class="meta">
+Amsterdam • Olanda
+</p>
+
+<a class="btn"
+href="https://www.dpbolvw.net/click-101892598-15359590"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Vezi hotelurile →
+
+</a>
+
+</div>
+</article>
 
 </div>
 </section>
+
+<!-- DESTINATII -->
 
 <section class="wrap" id="destinatii">
-<div class="eyebrow">🌍 Descoperă</div>
-<h2 class="title">Destinații populare</h2>
-<p class="sub">Alege destinația și verifică hotelurile disponibile.</p>
+
+<div class="eyebrow">
+🌴 Descoperă
+</div>
+
+<h2 class="title">
+Destinații populare
+</h2>
+
+<p class="sub">
+Alege locul unde vrei să mergi și intră direct pe Booking.com.
+</p>
+
 <div class="dest">
-<a href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank">🇹🇷 Antalya</a>
-<a href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank">🇬🇷 Grecia</a>
-<a href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank">🇪🇸 Spania</a>
-<a href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank">🇮🇹 Italia</a>
-<a href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank">🇹🇷 Turcia</a>
-<a href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank">🇫🇷 Paris</a>
+
+<a href="#hoteluri">🇹🇷 Antalya</a>
+<a href="#hoteluri">🇹🇷 Belek</a>
+<a href="#hoteluri">🇬🇷 Creta</a>
+<a href="#hoteluri">🇪🇸 Barcelona</a>
+<a href="#hoteluri">🇮🇹 Roma</a>
+<a href="#hoteluri">🇫🇷 Paris</a>
+
 </div>
 </section>
 
-<section class="wrap" id="noi">
+<!-- OFERTE -->
+
+<section class="wrap" id="oferte">
+
+<div class="dual">
+
+<div class="panel">
+
+<h2>🔥 Oferte speciale</h2>
+
+<p>
+Vezi disponibilitatea și prețurile actuale direct pe Booking.com.
+</p>
+
+<div class="list">
+
+<a href="https://www.dpbolvw.net/click-101892598-13397436?sid=hotel-antalya&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Ftr%2Fantalya.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+🇹🇷 Antalya — hoteluri
+
+</a>
+
+<a href="https://www.tkqlhce.com/click-101892598-13397436?sid=hotel-belek&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Ftr%2Fbelek.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+🇹🇷 Belek — resorturi
+
+</a>
+
+<a href="https://www.tkqlhce.com/click-101892598-13397436?sid=hotel-crete&url=https%3A%2F%2Fwww.booking.com%2Fregion%2Fgr%2Fcrete.html"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+🇬🇷 Creta — hoteluri
+
+</a>
+
+</div>
+</div>
+
+<div class="panel light">
+
+<h2>🇳🇱 Plecare din Amsterdam</h2>
+
+<p>
+Rute populare pentru următoarea vacanță.
+</p>
+
+<div class="list">
+
+<a href="#zboruri">
+✈️ Vezi toate rutele Amsterdam
+</a>
+
+<a href="https://www.dpbolvw.net/click-101892598-15359590"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+🏨 Hoteluri în Olanda
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+
+<section class="wrap">
+
 <div class="cta">
-<h2>Găsește-ți următoarea vacanță ❤️</h2>
-<p>Compară hoteluri și verifică ofertele disponibile pe Booking.com.</p>
-<a href="https://www.dpbolvw.net/click-101892598-15359590" target="_blank">Caută hoteluri →</a>
+
+<h2>
+Găsește-ți următoarea vacanță ❤️
+</h2>
+
+<p>
+Vacanțe pentru românii din Olanda, cu acces direct la ofertele Booking.com.
+</p>
+
+<div class="actions" style="justify-content:center">
+
+<a class="primary" href="#zboruri">
+Caută zboruri →
+</a>
+
+<a class="secondary" href="#hoteluri">
+Vezi hoteluri →
+</a>
+
+</div>
+
 </div>
 </section>
 
-<footer>© 2026 VacantaRO.NL • Vacanțe pentru românii din Olanda</footer>
+<footer>
+
+<strong>VacantaRO.NL</strong>
+
+<br><br>
+
+Vacanțe pentru românii din Olanda 🇷🇴🇳🇱
+
+<br>
+
+<span style="display:block;margin-top:10px">
+
+Unele linkuri de pe acest site sunt linkuri afiliate.
+Rezervările sunt finalizate pe Booking.com.
+
+</span>
+
+</footer>
 
 </body>
 </html>
